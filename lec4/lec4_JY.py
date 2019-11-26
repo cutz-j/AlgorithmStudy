@@ -58,3 +58,30 @@ for _ in range(count):
             temp=[sum(table[len(table)-1][:x]) for x in range(1,15)]
             table.append(temp)
         print(table[K][N-1])
+
+# 2490
+# 0 배
+# 1 등
+for _ in range(3):
+    line = input().split(" ")
+    line = [int(x) for x in line]
+    out = sum(line)
+    if out ==0:
+        print("D")
+    elif out==1:
+        print("C")
+    elif out==2:
+        print("B")
+    elif out==3:
+        print("A")
+    elif out==4:
+        print("E")
+    else:
+        pass
+
+# 2163
+
+line = input().split(" ")
+N = int(line[0])
+M = int(line[1])
+print(N*M-1)
