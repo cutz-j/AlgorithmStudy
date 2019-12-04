@@ -20,7 +20,7 @@ def countPairings(*taken):
             break
         
     if firstFree == -1:
-        ret = 0
+        return 1
     
     for pairWith in range(n):
         pairWith = firstFree + 1
