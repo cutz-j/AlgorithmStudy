@@ -99,3 +99,122 @@ for _ in range(TEST):
         print("YES")
     else:
         print("NO")
+
+
+
+
+
+
+
+
+
+# O(2자승) 풀이
+from itertools import product
+count = int(input())
+
+
+for _ in range(count):
+    _ = input()
+    num_list = input().split(" ")
+    num_list = [int(x) for x in num_list]
+    global_counter=0
+    cheat = list(product([0,1],repeat=len(num_list)))
+   
+    for elem in cheat:
+        temp = [a*b for a,b in zip(elem,num_list)]
+        temp = [i for i in temp if i != 0]
+        if global_counter > len(temp):
+            pass
+        else:
+            if sorted(set(temp))==temp:
+                if global_counter<len(temp):
+                    global_counter=len(temp)
+                
+    print(global_counter)
+    
+        
+# 더 빠른 풀이 jis
+def lis(lr):
+    vector =[]
+    for part in lr:
+        if not vector:
+            vector.append(part)
+        else:
+            if vector[-1]<part:
+                vector.append(part)
+                # print(vector)
+            elif vector[-1]> part:
+                for index,element in enumerate(vector):
+                    if element> part:
+                        vector[index]=part
+                        break
+    return vector
+                    
+                
+   
+    
+    
+count = int(input())
+
+
+for _ in range(count):
+    _ = input()
+    num_list = input().split(" ")
+    num_list = [int(x) for x in num_list]
+    print(len(lis(num_list)))
+
+
+# jlis
+
+def jlis(lr,lr1):
+    indexer_1=0
+    indexer_2=0
+    vector=0
+    while indexer_1 < len(lr) or indexer_2 < len(lr1):
+    
+    if not vector:
+        vector.append(lr[indexer_1])
+        indexer_1+=1
+    else:
+        if indexer_1 < len(lr):
+            if vector[-1]< lr[indexer_1]:
+                vector.append(lr[indexer_1])
+                indexer_1+=1
+            elif vector[-1]> lr[indexer_1]:
+                for index,element in enumerate(vector):
+                    if element> lr[indexer_1]:
+                        vector.insert(index,lr[indexer_1])
+                        break
+                indexer_1+=1
+            elif vector[-1]== lr[indexer_1]:
+                indexer_1+=1
+        elif indexer_2 < len(lr1):
+            if vector[-1]< lr1[indexer_2]:
+                vector.append(lr1[indexer_2])
+                indexer_2+=1
+            
+            elif vector[-1]> lr1[indexer_2]:
+                for index,element in enumerate(vector):
+                    if element> lr1[indexer_2]:
+                        vector.insert(index,lr1[indexer_2])
+                        break
+                indexer_2+=1
+            elif vector[-1] == lr1[indexer_2]:
+                indexer_2+=1
+            else:
+                pass
+    return vector
+
+
+
+
+count = int(input())
+
+
+for _ in range(count):
+    _ = input()
+    num_list = input().split(" ")
+    num_list1 = input().split(" ")
+    num_list = [int(x) for x in num_list]
+    num_list1 = [int(x) for x in num_list1]
+    print(len(set(jlis(num_list,num_list1))))
