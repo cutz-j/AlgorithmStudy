@@ -218,3 +218,33 @@ for _ in range(count):
     num_list = [int(x) for x in num_list]
     num_list1 = [int(x) for x in num_list1]
     print(len(set(jlis(num_list,num_list1))))
+
+# poliomino
+
+def poly(n,first):
+    if n==first:
+        return 1
+    if CACHE[n][first] != -1:
+        return CACHE[n][first]
+    ret =0
+    for second in range(1,n-first+1):
+        ret += (second +first -1)*poly(n-first,second)
+        ret = ret%MOD
+    CACHE[n][first] =ret
+    return ret
+
+
+
+count = int(input())
+MOD = 10*1000*1000
+CACHE = [[-1 for j in range(101)] for k in range(101)]
+
+
+for _ in range(count):
+    answer = 0
+    number = int(input())
+
+    for index in range(1,number+1):
+        answer += poly(number,index)
+        answer = answer%10000000
+    print(answer)
