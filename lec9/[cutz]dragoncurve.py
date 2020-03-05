@@ -16,7 +16,7 @@ def curve(seed, gen):
             print(seed[i])
             
 MAX = 1000000000 + 1
-length = [i for i in range(51)]
+length = [1]*51
 def precalc():
     length[0] = 1
     # 점화식
@@ -32,7 +32,7 @@ def expand(dragon_curve, gen, skip):
         return dragon_curve[skip]
     
     for i in range(len(dragon_curve)):
-        if dragon_curve[i] == 'X' | dragon_curve[i] == 'Y':
+        if dragon_curve[i] == 'X' or dragon_curve[i] == 'Y':
             if skip >= length[gen]:
                 skip -= length[gen]
             elif dragon_curve[i] == 'X':
@@ -45,4 +45,16 @@ def expand(dragon_curve, gen, skip):
             return dragon_curve[i]
     return '#'
         
+
+#rl = input
+rl = lambda : sys.stdin.readline()
+precalc()
+C = int(rl()) # m = word lenfth, q = sentences length
+for _ in range(C):
+    n, skip, last = map(int, rl().split())
     
+    answer = ''
+    for l in range(last):
+        answer += expand('FX', n, skip+l-1)
+    
+    print(answer)
