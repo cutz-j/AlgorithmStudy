@@ -4,6 +4,7 @@ import sys
 volume_list, need_list, name_list = [], [], []
 n = -1 # item length wanted
 cache = [[]] # dp
+picked = []
 
 def pack(capacity, i):
     '''
@@ -20,16 +21,16 @@ def pack(capacity, i):
     ret = cache[capacity][i]
     if ret != -1:
         return ret
-    
     # not pick up
     ret = pack(capacity, i+1)
     
     # pick up
     if capacity >= volume_list[i]:
         ret = max(ret, pack(capacity - volume_list[i], i+1) + need_list[i])
+    cache[capacity][i] = ret
     return ret
 
-def reconstruct(capacity, i, picked, score):
+def reconstruct(capacity, i):
     '''
     function:
         
@@ -41,11 +42,10 @@ def reconstruct(capacity, i, picked, score):
     present_n = pack(capacity, i)
     next_n = pack(capacity, i+1)
     if present_n == next_n:
-        reconstruct(capacity, i+1, picked, score)
+        reconstruct(capacity, i+1)
     else:
         picked.append(name_list[i])
-        score.append(present_n)
-        reconstruct(capacity - volume_list[i], i+1, picked, score)
+        reconstruct(capacity - volume_list[i], i+1)
 
     
 
@@ -53,7 +53,7 @@ rl = lambda : sys.stdin.readline()
 #rl = input
 for _ in range(int(rl())):
     n, w = map(int, rl().split())
-    cache = [[-1]*(n+1)]*(w+1) # index
+    cache = [[-1] * (n + 1) for _ in range(w + 1)]
         
     for i_ in range(n):
         item, volume, need = rl().split()
@@ -63,8 +63,7 @@ for _ in range(int(rl())):
         need_list.append(int(need))
     
     picked = []
-    score_list = []
-    reconstruct(w, 0, picked, score_list)
-    print(max(score_list), len(picked))
+    reconstruct(w, 0)
+    print(cache[w][0], len(picked))
     for item_ in picked:
         print(item_)
