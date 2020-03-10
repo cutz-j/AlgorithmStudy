@@ -1,5 +1,5 @@
 import sys
-sys.setrecursionlimit(10000)
+sys.setrecursionlimit(32688)
 
 MAX = 15
 cache = [[-1]*((1<<MAX)+1+1) for _ in range(MAX+1)]
@@ -24,26 +24,40 @@ def overlap(k_i, k_j):
             return l
     return 0
 
-def restore(last, now):
+def restore(last, used):
     # 완전탐색
     # basis
-    if now == (1<<K)-1:
+    if used == (1<<K)-1:
         return 0
    
     # memoization
-    result = cache[last][now]
+    result = cache[last][used]
     if result != -1:
         return result # dp
     
     result = 0
     
-    for k in range(K):
-        if (last & (1 << k)) == 0:
-            candidate = overlap_list[last][k] + restore(k, now+(1<<k))
+    for n in range(K):
+        if (last & (1 << n)) == 0: # ???
+            candidate = overlap_list[last][n] + restore(n, used+(1<<n))
             result = max(result, candidate)
     
-    cache[last][now] = result
+    cache[last][used] = result
     return result
+
+def reconstruct(last, now):
+    if now == (1<<K)-1:
+        return ""
+    
+    for n in range(K):
+        if now & (1<<n):
+            continue
+        if_used = restore(n, now+(1<<n)) + overlap[last][n]
+        
+        if restore(last, now) == if_used:
+            return k_list[n][:len(k_list[n])-overlap[last][n]] + reconstruct(n, now+(1<<n))
+        
+    return "error"
     
 
 # complete search
@@ -73,5 +87,5 @@ for _ in range(C):
             else:
                 overlap_list[i][j] = overlap(k_list[i], k_list[j])
 
-    
+#    print(reconstruct(K-1, 0))
 
