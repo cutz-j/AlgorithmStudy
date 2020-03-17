@@ -15,7 +15,6 @@ def genius(time, song):
         
     
     
-
 #rl = lambda : sys.stdin.readline()
 rl = input
 C = int(rl())
