@@ -1,17 +1,22 @@
 import sys
+sys.setrecursionlimit(30000)
 
 def genius(time, song):
-    log = (time, song)
+    # Recursive DP 불가능 --> k=1,000,000 일때 maximum recursive 
     if time > k:
-        return cache[log]
-    if cache.get(log, -1) != -1:
-        return cache[log]
+        if song == p:
+            return 1
+        else:
+            return 0
     
-    cache[log] = 0.0
-    for i in range(1, n):
-        cache[log] += genius(time - length[i], i-1) * T[i-1][i]
-        
-    return cache[log]
+    if cache.get((time, song), -1) != -1:
+        return cache[(time, song)]
+    
+    ret = 0
+    for i in range(n):
+        ret += genius(time + length[i], i) * T[song][i]
+    cache[(time, song)] = ret 
+    return ret
         
     
     
@@ -19,7 +24,6 @@ def genius(time, song):
 rl = input
 C = int(rl())
 for _ in range(C):
-    cache = {}
     n, k, m = map(int, rl().split())
     length = list(map(int, rl().split()))
     T = []
@@ -29,4 +33,10 @@ for _ in range(C):
     prefer = list(map(int, rl().split()))
     time = 0
     
-    genius(time, 0)
+    res = ''
+    for p in prefer:
+        cache = {}
+        res += str(genius(time+length[0], 0))
+        if prefer.index(p) != len(prefer)-1:
+            res += ' '
+    print(res)
