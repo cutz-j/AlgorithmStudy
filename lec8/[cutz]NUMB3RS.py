@@ -3,7 +3,7 @@ import sys
 
 def bruteforce(path):
     # time over
-    if len(path) == D+1:
+    if len(path) == D+1: # 0일에 1개를 넣기 때문.
         if path[-1] != q:
             return 0.0
 #        print("path", path)
@@ -27,14 +27,35 @@ def dp(here, days):
         else:
             return 0.0
     
-    if cache.get((here, days), -1) > -0.5:
+    if cache.get((here, days), -1) != -1:
         return cache[(here, days)]
     
     ret = 0.0
     for i in range(N):
         if A[here][i] == 1:
-            ret += (dp(i, days+1) / deg[i])
+            ret += dp(i, days+1) / deg[here]
+    cache[(here, days)] = ret
     return ret
+
+def dp_reverse(here, days):
+    # q부터 reverse 계산
+    # 그 전날 어디에 숨어있을 지를 계산
+    if days == 0:
+        if here == P:
+            return 1
+        else:
+            return 0
+   
+    if cache.get((here, days), -1) != -1:
+        return cache[(here, days)]
+    
+    ret = 0
+    for i in range(N):
+        if A[here][i] == 1:
+            ret += dp_reverse(i, days-1) / deg[i]
+    cache[(here, days)] = ret
+    return ret
+    
 
             
 #rl = lambda : sys.stdin.readline()
@@ -43,7 +64,6 @@ rl = input
 C = int(rl())
 for _ in range(C):
     A = []
-    cache = {}
     N, D, P = map(int, rl().split())
     for __ in range(N):
         A.append(list(map(int, rl().split())))
@@ -60,9 +80,16 @@ for _ in range(C):
 #    path = [P]
     res = ''
     for q in Q:
-#        res += str(bruteforce(path))
-        res += str(dp(P, 0))
+        cache = {}
+        res += str(dp_reverse(q, D))
         if Q.index(q) != len(Q)-1:
             res += ' '
+            
+#    for q in Q: # q가 바뀔때 연산 수가 증가
+#        cache = {}
+##        res += str(bruteforce(path))
+#        res += str(dp(P, 0))
+#        if Q.index(q) != len(Q)-1:
+#            res += ' '
     
     print(res)
