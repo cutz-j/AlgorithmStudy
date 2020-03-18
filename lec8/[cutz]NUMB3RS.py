@@ -81,7 +81,7 @@ for _ in range(C):
     res = ''
             
 #    for q in Q: # q가 바뀔때 연산 수가 증가
-#        cache = {}
+#        cache = {} # 연산이 크게 늘어나는 이유
 ##        res += str(bruteforce(path))
 #        res += str(dp(P, 0))
 #        if Q.index(q) != len(Q)-1:
