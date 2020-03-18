@@ -79,11 +79,6 @@ for _ in range(C):
     
 #    path = [P]
     res = ''
-    for q in Q:
-        cache = {}
-        res += str(dp_reverse(q, D))
-        if Q.index(q) != len(Q)-1:
-            res += ' '
             
 #    for q in Q: # q가 바뀔때 연산 수가 증가
 #        cache = {}
@@ -91,5 +86,10 @@ for _ in range(C):
 #        res += str(dp(P, 0))
 #        if Q.index(q) != len(Q)-1:
 #            res += ' '
+    cache = {}
+    for q in Q:
+        res += str(dp_reverse(q, D))
+        if Q.index(q) != len(Q)-1:
+            res += ' '
     
     print(res)
