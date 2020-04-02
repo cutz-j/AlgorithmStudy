@@ -1,5 +1,4 @@
 import sys
-import pandas as pd
 
 cover = [[[0, 0], [1, 0], [0, 1]],
          [[0, 0], [0, 1], [1, 1]],
@@ -51,8 +50,8 @@ def cover_block(board):
     
 
 
-rl = lambda: sys.stdin.readline()
-#rl = input
+#rl = lambda: sys.stdin.readline()
+rl = input
 C = int(rl())
 
 for _ in range(C):
@@ -72,8 +71,11 @@ for _ in range(C):
         block_list.append(tmp_list)
         
     if white % 3 != 0:
-        answer = 0
-        print(answer)
+        print(0)
+        continue
+    
+    if black == (W*H):
+        print(1)
         continue
     
     print(cover_block(block_list))
