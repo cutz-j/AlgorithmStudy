@@ -3,12 +3,15 @@ import sys
 def rotate(arr):
     # upper most --> rotation --> relative coordinates
     rotated = []
-    for i in range(len(arr)):
-        rotated.append([0 for j in range(len(arr[0]))])
+    for i in range(len(arr[0])):
+        tmp = []
+        for j in range(len(arr)):
+            tmp.append(0)
+        rotated.append(tmp)
     
     for i in range(len(arr)):
         for j in range(len(arr[0])):
-            rotated[i][len(arr)-i-1] = arr[i][j]
+            rotated[j][len(arr)-i-1] = arr[i][j]
             
     return rotated
     
@@ -25,7 +28,11 @@ def generate(block):
                     rotations[rot].append((i - origin_y, j - origin_x))
         block = rotate(block)
     
+
+def search(placed):
+    #  가장 윗칸 반복 재귀
     
+    return
     
 rl = input
 #rl = lambda: sys.stdin.readline()
