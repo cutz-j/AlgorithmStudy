@@ -47,14 +47,7 @@ def set_block(board, y, x, cover_type, delta):
 def search(place_num):
     global best, white_num
     #  가장 윗칸 반복 재귀
-    # heuristic pruning
-    import numpy as np
-    
-    print(np.array(game), white_num)
-    
-    if best >= white_num / block_num:
-        return
-    
+    # heuristic pruning       
     x, y = -1, -1
     for i in range(H):
         for j in range(W):
@@ -67,6 +60,9 @@ def search(place_num):
         best = max(best, place_num)
         return
     
+    if best > int(white_num / block_num):
+        return
+   
     ret = 0
     for t in range(4):
         if set_block(game, y, x, t, 1) == True:
@@ -77,12 +73,14 @@ def search(place_num):
     
     # 해당 y, x칸에 무조건 블럭이 놓여야 하는 것이 아니기 때문.
     game[y][x] = 1
+    white_num -= 1
     search(place_num)
     game[y][x] = 0
+    white_num += 1
     return ret
       
-rl = input
-#rl = lambda: sys.stdin.readline()
+#rl = input
+rl = lambda: sys.stdin.readline()
 
 C = int(rl())
 
@@ -113,8 +111,6 @@ for _ in range(C):
             else:
                 block_tmp.append(0)
         block.append(block_tmp)
-    
-    white_fnum = white_num
     rotations = [[], [], [], []]
     generate(block)
     search(0)
