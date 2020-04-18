@@ -52,8 +52,8 @@ def search2(edible, chosen):
              
     
 
-#rl = input
-rl = lambda: sys.stdin.readline()
+rl = input
+#rl = lambda: sys.stdin.readline()
 
 C = int(rl())
 for _ in range(C):
