@@ -34,14 +34,19 @@ if __name__=='__main__':
         friends_lst=[x for x in input().split()]
         #friends_lst.append([[x for x in input().split()]])
             
-        canEat = []
+        tmp = []
         edible = [0 for _ in range(num_friends)]
         
         for _ in range(food_num):
-            canEat.append([x for x in input().split()])
+            tmp.append([x for x in input().split()])
             
-        eaters = [ce[1:] for ce in canEat]
+        eaters = [ce[1:] for ce in tmp]
         
+        canEat = []
+        
+        canEat = []
+        for fl in friends_lst:
+            canEat.append([i for i ,v in enumerate(tmp) if fl in v])
         search(edible,0)
         print(best)
     
