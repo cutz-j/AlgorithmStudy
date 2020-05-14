@@ -20,6 +20,12 @@ def paper(size, y, x):
                 minus, one = False, False
             else:
                 minus, zero = False, False
+            if zero == minus == one == False:
+                break
+        
+        if zero == minus == one == False:
+                break    
+            
     if minus:
         minus_num += 1
     elif zero:
