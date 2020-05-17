@@ -77,7 +77,7 @@ def nearest_dc(start, end):
                 # 같은 part
                 elif part_list[j][0] < mid_y and part_list[i][0] < mid_y:
                     continue
-                elif part_list[j][0] > mid_y and part_list[i][0] > mid_y:
+                elif part_list[j][0] > mid_y:
                     continue
                 dist = distance(part_list[j], part_list[i])
                 if dist < min_partition_value:
