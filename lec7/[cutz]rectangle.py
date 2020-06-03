@@ -1,10 +1,13 @@
 import sys
+sys.setrecursionlimit(999999999)
 
 def solve(left, right):
+    # [left, right] 구간에서의 가장 큰 넓이 반환
     if left == right:
         return hist[left] # 1개 남은 경우
     
     mid = (left + right) // 2 # [left, mid] [mid+1, right] divide
+    # 더 큰 넓이
     result = max(solve(left, mid), solve(mid+1, right))
     
     # calculate area: 걸쳐있는 경우
@@ -16,7 +19,7 @@ def solve(left, right):
     
     # 반복하여 확장
     while left < lo or hi < right:
-        if hi < right and (lo == left or h[lo-1] < h[hi+1]):
+        if hi < right and (lo == left or hist[lo-1] < hist[hi+1]):
             hi += 1
             height = min(height, hist[hi])
         
@@ -38,3 +41,4 @@ while True:
     N = hist.pop(0)
     if N == 0:
         break
+    print(solve(0, N-1))
