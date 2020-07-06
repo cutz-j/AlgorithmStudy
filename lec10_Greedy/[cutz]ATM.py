@@ -1,7 +1,15 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Fri Jul  3 10:30:23 2020
+import sys
 
-@author: cutz
-"""
+#rl = lambda: sys.stdin.readline()
+rl = input
 
+N = int(rl())
+P = list(map(int, rl().split()))
+
+P.sort()
+present_sum, res = 0, 0
+for p in P:
+    present_sum += p
+    res+= present_sum
+    
+print(res)
