@@ -12,7 +12,7 @@ def find(x):
     return x
 
 def merge(a, b):
-    parent[b] = a
+    parent[a] = b
 
 
 rl = input
