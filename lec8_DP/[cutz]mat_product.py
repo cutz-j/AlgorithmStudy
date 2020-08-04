@@ -1,22 +1,26 @@
 import sys
 
 def product(present_idx, idx_arr, dp_arr):
-    if len(dp_arr) == N:
-        return cache[tuple(dp_arr)]
+    if len(dp_arr) == N-1:
+        return sys.maxsize
     
     if cache.get(tuple(dp_arr), -1) != -1:
         return cache[tuple(dp_arr)]
     
     dp_arr.append(present_idx)
+    idx_arr.remove(present_idx)
     r, c = mat[present_idx]
     for i in idx_arr:
         a, b = mat[i]
         if c == a:
-            cache[tuple(dp_arr)] = min(cache.get(tuple(dp_arr))+r*c*b, product(i, idx_arr, dp_arr))
+            result = min(cache.get(tuple(dp_arr), 0)+r*c*b, product(i, idx_arr, dp_arr))
+            cache[tuple(dp_arr)] = result
     
-    return cache[tuple(dp_arr)] 
+    return result
         
-        
+
+# 먼저 쌍을 만들고 가야할지.
+# dp list --> 빨리 참
 
 
 
