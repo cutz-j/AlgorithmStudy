@@ -12,7 +12,7 @@ def init():
         tree[t+i] = int_list[i]
         
     # upper node
-    for i in range(t-1, 1, -1):
+    for i in range(t-1, 0, -1):
         # left right lower node
         # minimum tree
         tree[i] = min(tree[i*2], tree[i*2+1])
