@@ -10,7 +10,7 @@ def dfs(i, liter, cnt):
             dfs(j-1, liter+1, cnt)
     if cnt_all != cnt:
         child = cnt - cnt_all
-        cnt_list[i] = child
+        cnt_list[i] = childp
     dfs_order.append(i+1)
     score.append(liter)
 
@@ -72,17 +72,19 @@ dfs(0, 1, 0)
 dfs_order = dfs_order[::-1]
 score = score[::-1]
 tree = [0] * (N*4)
+dfs_idx_dict = {value:idx for idx, value in enumerate(dfs_order)}
+
 #init()
 for _ in range(Q):
     query, city = map(int, rl().split())
     
     if query == 1:
-        idx = dfs_order.index(city)
+        idx = dfs_idx_dict[city]
         s = score[idx]
         update(idx)
             
     elif query == 2:
-        idx = dfs_order.index(city)
+        idx = dfs_idx_dict[city]
         s = score[idx]
         child = cnt_list[idx]
         left, right = idx, idx+child
