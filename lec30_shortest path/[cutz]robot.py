@@ -26,7 +26,7 @@ for i in range(len(parts)):
 heap = []
 dist = [sys.maxsize]*(N)
 heapq.heappush(heap, (0, present-1))
-while heapq:
+while heap:
     w, v = heapq.heappop(heap)
     adj_vec = adj[v]
     for d, a in adj_vec:
