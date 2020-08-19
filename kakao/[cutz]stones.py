@@ -46,7 +46,7 @@ def query_max(l, r, N, tree):
                 s = tree[tl]
             tl += 1
         elif tr % 2 == 0:
-            if tree[tr] > s:
+            if tree[tr] > s:  
                 s = tree[tr]
             tr -= 1
         tl //= 2
