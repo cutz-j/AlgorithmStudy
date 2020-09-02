@@ -1,58 +1,41 @@
 import sys
 from itertools import combinations
 import copy
-
-class Queue():
-    def __init__(self):
-        self.front = 0
-        self.rear = 0
-        self.list = []
-        self.pop_count = 0
-        
-    def append(self, x):
-        self.list.append(x)
-        self.rear += 1
-    
-    def pop(self):
-        res = self.list[self.front]
-        self.front += 1
-        self.pop_count += 1
-        return res
-        
-    def empty(self):
-        return len(self.list) == self.pop_count
+from collections import deque
     
 
-def bfs():
-    ans = sys.maxsize
-    comb_set = combinations(virus, M)
-    for comb in comb_set:
-        queue = Queue()
-        res = copy.deepcopy(lab)
-        virus_num, cnt = inactive, 0
-        for row, col in comb:
-            res[row][col] = -1
-            queue.append((row, col, cnt))
-        
-        while queue.empty() == False:
-            row, col, cnt = queue.pop()
-            if cnt > ans:
+def bfs(res, comb, ans):
+    queue = deque()
+    virus_num, cnt = inactive, 0
+    for row, col in comb:
+        queue.append((row, col, cnt))
+    
+    while queue:
+        row, col, cnt = queue.popleft()
+        res[row][col] = -1
+        if cnt >= ans:
+            break
+        for k in range(4):
+            new_row, new_col = row+row_dir[k], col+col_dir[k]
+            if (0 <= new_row < N) and (0 <= new_col < N):
+                if res[new_row][new_col] == 0:
+                    queue.append((new_row, new_col, cnt+1))
+                    virus_num += 1
+                    res[new_row][new_col] = -1
+                
+                if virus_num == space:
+                    break
+                    
+                elif lab[new_row][new_col] == 2 and virus_num < space:
+                    queue.append((new_row, new_col, cnt+1))
+                    res[new_row][new_col] = -1
+            
+            if virus_num == space:
                 break
-            for k in range(4):
-                new_row, new_col = row+row_dir[k], col+col_dir[k]
-                if (0 <= new_row < N) and (0 <= new_col < N):
-                    if res[new_row][new_col] == 0:
-                        queue.append((new_row, new_col, cnt+1))
-                        virus_num += 1
-                        res[new_row][new_col] = -1
-                        
-                    elif res[new_row][new_col] == 2 and virus_num < space:
-                        queue.append((new_row, new_col, cnt+1))
-                        res[new_row][new_col] = -1
- 
-        if virus_num == space:
-            if cnt < ans:
-                ans = cnt
+
+    if virus_num == space:
+        if cnt < ans:
+            ans = cnt
     return ans
 
 rl = input
@@ -73,16 +56,24 @@ for i in range(N):
             space += 1
         elif value == 0:
             space += 1
+            
+ans = sys.maxsize
 
 if space == inactive:
-    ans = 0
-    print(ans)
-
+    answer = 0
+    print(answer)
 else:
-    ans = bfs()
-    if ans == sys.maxsize:
-        ans = -1
-    print(ans)
+    comb_set = combinations(virus, M)
+    answer = sys.maxsize
+    for comb in comb_set:
+        res = copy.deepcopy(lab)
+        ans = bfs(res, comb, ans)
+        if ans < answer:
+            answer = ans
+    if answer == sys.maxsize:
+        answer = -1
+    print(answer)
+    
 
 
 
