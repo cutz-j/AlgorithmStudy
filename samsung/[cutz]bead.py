@@ -5,13 +5,11 @@ def bfs():
     queue = deque()
     ans, step = sys.maxsize, 1
     queue.append([red, blue, step])
-    visited = [[[0 for _ in range(M)] for __ in range(N)] for ___ in range(2)]
+    visited = {}
     while queue:
         (red_x, red_y), (blue_x, blue_y), step = queue.popleft()
-        print("red", red_x, red_y, "blue", blue_x, blue_y)
-    
-        visited[0][red_x][red_y] = 1
-        visited[1][blue_x][blue_y] = 1
+   
+        visited[(red_x, red_y, blue_x, blue_y)] = 1
         
         for i in range(4):
             new_red_row, new_red_col = red_x, red_y
@@ -56,7 +54,7 @@ def bfs():
                     ans = step
             elif not red_o and not blue_o:
                 if (red_x, red_y, blue_x, blue_y) != (res_red_row, res_red_col, res_blue_row, res_blue_col):
-                    if visited[0][res_red_row][res_red_col] == 0 or visited[1][res_blue_row][res_blue_col] == 0:
+                    if visited.get((res_red_row, res_red_col, res_blue_row, res_blue_col), -1) == -1:
                         queue.append([(res_red_row, res_red_col), (res_blue_row, res_blue_col), step+1])
                     
     if ans > 10 or ans == sys.maxsize:
