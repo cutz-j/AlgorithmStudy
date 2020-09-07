@@ -18,7 +18,18 @@ def is_valid(s):
     else:
         return False
             
+
+def isValid(s):
+
+    C = Counter(s) ; V = list(C.values())
+    F = Counter(V)
         
+    if len(F) == 1 : return "YES"
+    if len(F) > 2 : return "NO"
+
+    if F[1] == 1 : return "YES"
+    m, M = min(V), max(V)
+    return "YES" if F[M] == 1 and M == m+1 else "NO"        
 
 
 
