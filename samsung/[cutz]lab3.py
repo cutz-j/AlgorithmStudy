@@ -18,17 +18,19 @@ def bfs(res, comb, ans):
         for k in range(4):
             new_row, new_col = row+row_dir[k], col+col_dir[k]
             if (0 <= new_row < N) and (0 <= new_col < N):
+                if res[new_row][new_col] == -1:
+                    continue
+                
                 if res[new_row][new_col] == 0:
                     queue.append((new_row, new_col, cnt+1))
                     virus_num += 1
                     res[new_row][new_col] = -1
-                
-                if virus_num == space:
-                    break
-                    
+      
                 elif lab[new_row][new_col] == 2 and virus_num < space:
                     queue.append((new_row, new_col, cnt+1))
                     res[new_row][new_col] = -1
+                    
+
             
             if virus_num == space:
                 break
