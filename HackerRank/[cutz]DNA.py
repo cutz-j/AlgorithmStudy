@@ -58,6 +58,6 @@ if __name__ == '__main__':
 
         d = firstLastd[2]
     
-    
+    # trie --> insert --> condition serach
 
     
