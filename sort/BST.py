@@ -4,6 +4,7 @@ class Node(object):
         self.data = data
         self.left = None
         self.right = None
+        self.parent = None
         self.subtree = 0
         
 class BST(object):
@@ -22,8 +23,10 @@ class BST(object):
             # not root
             if data <= node.data:
                 node.left = self._insert_value(node.left, data)
+                node.left.parent = node
             else:
                 node.right = self._insert_value(node.right, data)
+                node.right.parent = node
         return node
     
     def find(self, data):
@@ -38,6 +41,16 @@ class BST(object):
         
         else:
             return self._find_value(node.right, data)
+        
+    def _find_node(self, node, data):
+        if node.data == data:
+            return node
+        
+        elif data < node.data:
+            return self._find_node(node.left, data)
+        
+        else:
+            return self._find_node(node.right, data)
         
     def find_min(self):
         return self._find_min(self.root)
@@ -60,7 +73,19 @@ class BST(object):
             return self._find_max(node.right)
                                  
         
-#    def next_larger(self, data):
+    def next_larger(self, data):
+        node = self._find_node(self.root, data)
+        if node.right:
+            return self._find_min(node.right)
+        else:
+            if node.parent.left.data == node.data:
+                return node.parent.data
+            elif node.parent.right.data == node.data:
+                if node.parent.parent.left.data == node.parent.data:
+                    return node.parent.parent.data
+                else:
+                    return None
+            
         
 # Rank / next_larger
         
