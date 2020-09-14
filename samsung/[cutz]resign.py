@@ -1,17 +1,19 @@
 import sys
 
 def step(t, r):
-    if cache.get(t, -1) != -1:
-        return cache[t]
-
+    global res
+    # if cache.get(t, -1) != -1:
+    #     return cache[t]
     if t >= N:
         return r
 
     for j in range(t, N):
         if j+time[j] <= N:
-            cache[t] = max(step(j+time[j], r+reward[j]), cache.get(t, 0))
+            # cache[j] = max(step(j+time[j], r+reward[j]), cache.get(j, 0))
+            result = step(j+time[j], r+reward[j])
+            if result > res:
+                res = result
     return r
-
 
 rl = lambda: sys.stdin.readline()
 
@@ -21,10 +23,12 @@ for _ in range(N):
     t, p = map(int, rl().split())
     time.append(t)
     reward.append(p)
-# visited = [-1 for _ in range(N)]
+
+res = 0
 cache = {}
 step(0, 0)
-if cache:
-    print(max(cache.values()))
-else:
-    print(0)
+print(res)
+# if cache:
+#     print(max(cache.values()))
+# else:
+#     print(0)
