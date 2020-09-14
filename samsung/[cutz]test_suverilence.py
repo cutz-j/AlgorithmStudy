@@ -20,7 +20,7 @@ for i in range(N):
             answer += (A[i] // C) + 1
 
 print(answer)
-        
+
     
 
 
