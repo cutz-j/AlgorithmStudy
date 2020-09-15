@@ -9,9 +9,9 @@ def step(t, r):
 
     for j in range(t, N):
         if j+time[j] <= N:
-            cache[t] = max(step(j+time[j], r+reward[j]), cache.get(t, 0))
+            cache[j] = max(step(j+time[j], r+reward[j]), cache.get(j, 0))
         else:
-            cache[t] = r
+            cache[j] = r
     return r
 
 
