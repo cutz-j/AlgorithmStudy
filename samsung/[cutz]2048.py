@@ -36,7 +36,7 @@ def step(board, direction):
     if direction == 1:
         for i in range(N):
             col = []
-            for j in range(N):
+            for j in range(N-1, -1, -1):
                 col.append(b[j][i])
             res = change(col)
             for j in range(N):
@@ -50,13 +50,13 @@ def step(board, direction):
 
     if direction == 3:
         for i in range(N):
-            col = b[i]
+            col = b[i][::-1]
             res = change(col)
             b[i] = res[::-1]
     return b
 
 
-def dfs(k, board):
+def dfs(k, board, traj):
     global res
     for i in range(N):
         for j in range(N):
@@ -67,7 +67,18 @@ def dfs(k, board):
         return
 
     for i in range(4):
-        dfs(k+1, step(board, i))
+        traj.append(i)
+        s = step(board, i)
+        # print("previous")
+        # for b in board:
+        #     print(b)
+        # print("direction: ", i)
+        # print("after")
+        # for c in s:
+        #     print(c)
+
+        dfs(k+1, s, traj)
+        traj.pop(-1)
 
 rl = lambda: sys.stdin.readline()
 
@@ -77,5 +88,5 @@ for _ in range(N):
     board.append(list(map(int, rl().split())))
 
 res = 0
-dfs(0, board)
+dfs(0, board, [])
 print(res)
