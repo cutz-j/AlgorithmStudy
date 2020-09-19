@@ -85,6 +85,8 @@ class BST(object):
                     return node.parent.parent.data
                 else:
                     return None
+                
+    def rank
             
         
 # Rank / next_larger
