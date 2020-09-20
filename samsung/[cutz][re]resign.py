@@ -1,6 +1,7 @@
 import sys
 
 def step(t, r):
+    print(t, cache)
     if cache.get(t, -1) != -1:
         return cache[t]
 
@@ -9,9 +10,9 @@ def step(t, r):
 
     for j in range(t, N):
         if j+time[j] <= N:
-            cache[j] = max(step(j+time[j], r+reward[j]), cache.get(j, 0))
+            cache[t] = max(step(j+time[j], r+reward[j]), cache.get(t, 0))
         else:
-            cache[j] = r
+            cache[t] = max(r, cache.get(t, 0))
     return r
 
 
