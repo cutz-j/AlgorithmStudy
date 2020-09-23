@@ -46,8 +46,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../lecture/MIT/HW/ps3/circuit2.py" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RunManager" selected="Python.[cutz]slope">
-    <configuration name="[cutz][re]lab1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.[cutz][re]surveillence">
+    <configuration name="[cutz][re]surveillence" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="samsung" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -59,7 +59,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:\github\AlgorithmStudy\samsung\[cutz][re]lab1.py" />
+      <option name="SCRIPT_NAME" value="D:\github\AlgorithmStudy\samsung\[cutz][re]surveillence.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -154,11 +154,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.[cutz][re]surveillence" />
         <item itemvalue="Python.[cutz]slope" />
         <item itemvalue="Python.[cutz]robotcleaner" />
         <item itemvalue="Python.circuit2" />
         <item itemvalue="Python.q1" />
-        <item itemvalue="Python.[cutz][re]lab1" />
       </list>
     </recent_temporary>
   </component>
@@ -183,6 +183,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="174" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1600003835080">
@@ -193,22 +194,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600605488686" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1600673887188">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1600840591105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600673887188" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1600673887187">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600840591105" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1600840591105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600673887187" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1600673887187">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600840591105" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1600840591105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600673887187" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1600673887188">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600840591105" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1600840591105">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600673887188" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600840591105" />
     <state width="1899" height="348" key="GridCell.Tab.1.bottom" timestamp="1600666490455">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
