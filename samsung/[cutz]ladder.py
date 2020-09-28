@@ -19,7 +19,7 @@ def ladder(n: int, h: int, adj: list) -> bool:
 
 rl = lambda: sys.stdin.readline()
 
-N, M, H = map(int, rl().split())z
+N, M, H = map(int, rl().split())
 
 adj = {} # last N-1 is invert direction // bi-drection
 for _ in range(M):
