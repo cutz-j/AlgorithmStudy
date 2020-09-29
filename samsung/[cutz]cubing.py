@@ -55,8 +55,8 @@ for _ in range(C):
         q, d = qd[0], qd[1]
         if q == 'U':
             if d == '+':
-                left = [cube['L'][i][2] for i in range(2, -1, -1)]
-                right = [cube['R'][i][0] for i in range(2, -1, -1)]
+                left = [cube['L'][i][2] for i in range(3)]
+                right = [cube['R'][i][0] for i in range(3)]
                 front = cube['F'][0][:]
                 back =  cube['B'][0][:]
                 for i in range(3):
@@ -81,9 +81,9 @@ for _ in range(C):
                 cube = rotate(q, d)
 
         if q == 'D':
-            if d == '+':
-                left = [cube['L'][i][0] for i in range(2, -1, -1)]
-                right = [cube['R'][i][2] for i in range(2, -1, -1)]
+            if d == '-':
+                left = [cube['L'][i][0] for i in range(3)]
+                right = [cube['R'][i][2] for i in range(3)]
                 front = cube['F'][0][:]
                 back = cube['B'][0][:]
                 for i in range(3):
@@ -94,7 +94,7 @@ for _ in range(C):
                 cube['B'][2] = left
                 cube = rotate(q, d)
 
-            elif d == '-':
+            elif d == '+':
                 left = [cube['L'][i][0] for i in range(3)]
                 right = [cube['R'][i][2] for i in range(3)]
                 front = cube['F'][2][:][::-1]
@@ -171,38 +171,49 @@ for _ in range(C):
 
         if q == 'F':
             if d == '+':
-                prev = cube[link[q][::-1][-1]][2] # U의 front 방면
-                # R D L U
-                for l in link[q][::-1]:
-                    prev_r = cube[l][2]
-                    cube[l][2] = prev
-                    prev = prev_r[:]
+                up = cube['U'][2][:]
+                down = cube['D'][2][:]
+                left = cube['L'][2][:]
+                right = cube['R'][2][:]
+                cube['U'][2] = left
+                cube['R'][2] = up
+                cube['D'][2] = right
+                cube['L'][2] = down
                 cube = rotate(q, d)
 
             if d == '-':
-                prev = cube[link[q][-1]][2]
-                for l in link[q]:
-                    prev_r = cube[l][2]
-                    cube[l][2] = prev
-                    prev = prev_r[:]
+                up = cube['U'][2][:][::-1]
+                down = cube['D'][2][:][::-1]
+                left = cube['L'][2][:]
+                right = cube['R'][2][:]
+                cube['U'][2] = right
+                cube['R'][2] = down
+                cube['D'][2] = left
+                cube['L'][2] = up
                 cube = rotate(q, d)
 
         if q == 'B':
-            if d == '-':
-                prev = cube[link[q][::-1][-1]][0]
-                for l in link[q][::-1]:
-                    prev_r = cube[l][0]
-                    cube[l][0] = prev
-                    prev = prev_r[:]
-                cube = rotate(q, d)
-
             if d == '+':
-                prev = cube[link[q][-1]][0]
-                for l in link[q]:
-                    prev_r = cube[l][0]
-                    cube[l][0] = prev
-                    prev = prev_r[:]
+                up = cube['U'][0][:]
+                down = cube['D'][0][:]
+                left = cube['L'][0][:]
+                right = cube['R'][0][:]
+                cube['U'][0] = right
+                cube['R'][0] = down
+                cube['D'][0] = left
+                cube['L'][0] = up
                 cube = rotate(q, d)
+            if d == '-':
+                up = cube['U'][0][:][::-1]
+                down = cube['D'][0][:][::-1]
+                left = cube['L'][0][:]
+                right = cube['R'][0][:]
+                cube['U'][0] = left
+                cube['R'][0] = up
+                cube['D'][0] = right
+                cube['L'][0] = down
+                cube = rotate(q, d)
+        print(cube)
 
     for u in cube['U']:
         print(''.join(u))
