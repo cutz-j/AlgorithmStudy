@@ -54,7 +54,7 @@ def air_step(A, air):
         prev_up, prev_down = now_up, now_down
 
     # up
-    for i in range(1, up-1):
+    for i in range(1, up):
         now_up = A[i][0]
         A[i][0] = prev_up
         dust[(i, 0)] = prev_up
@@ -102,6 +102,10 @@ while time < T:
     #     print(a)
     # print(dust)
     A = air_step(A, air)
+    # print("air")
+    # for a in A:
+    #     print(a)
+    # print()
     time += 1
 
 ans = 0
