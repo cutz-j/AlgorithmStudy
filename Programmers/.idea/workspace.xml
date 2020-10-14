@@ -43,7 +43,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../leetcode" />
   </component>
   <component name="RunManager" selected="Python.[cutz]bracket transform">
     <configuration name="[cutz][re]2ntiling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -210,29 +210,29 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="703" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602061498642" />
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1602245105601">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1602649924529">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602245105601" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1602566657985">
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602649924529" />
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1602581559027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602319802211" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602566657985" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1602566657985">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602581559027" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1602581559027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602319802211" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602566657985" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1602566657985">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602581559027" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1602581559027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602319802211" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602566657985" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1602566657985">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602581559027" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1602581559027">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602319802211" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602566657985" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1602581559027" />
   </component>
 </project>
