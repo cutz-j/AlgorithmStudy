@@ -5,6 +5,6 @@ def solve(s):
 
     for i in range(len(s)):
         hash_dict[s[i]] += 1
-        
+
 
     return
