@@ -46,7 +46,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../boj" />
   </component>
   <component name="RunManager" selected="Python.[cutz]bracket transform">
-    <configuration name="[cutz][re]2ntiling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="[cutz]2ntiling" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Programmers" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -58,7 +58,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/[cutz][re]2ntiling.py" />
+      <option name="SCRIPT_NAME" value="D:\github\AlgorithmStudy\Programmers\[cutz]2ntiling.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -175,7 +175,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.[cutz]bracket transform" />
-        <item itemvalue="Python.[cutz][re]2ntiling" />
+        <item itemvalue="Python.[cutz]2ntiling" />
         <item itemvalue="Python.[cutz]test" />
         <item itemvalue="Python.[cutz][re]Nexpression (1)" />
         <item itemvalue="Python.[cutz]fibonacci" />
