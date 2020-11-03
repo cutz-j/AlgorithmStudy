@@ -43,7 +43,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Programmers" />
   </component>
   <component name="RunManager" selected="Python.[cutz]fibonaci">
     <configuration name="[cutz]climb stair" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -160,8 +160,13 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1604386959018">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1604386959018" />
     <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1604323825660">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
