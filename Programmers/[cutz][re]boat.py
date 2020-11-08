@@ -2,14 +2,12 @@ def solution(people: list, limit: int) -> int:
     # greedy
     # sort --> insert --> count
     # minimize 가방의 남은 공간
-    answer = 1
+    answer = 0
     people.sort() # nlgn
-    cum = 0
-    for weight in people:
-        print(cum, weight, answer)
-        if limit - cum >= weight:
-            cum += weight
-        else:
-            answer += 1
-            cum = weight
+    i,j = 0, len(people)-1
+    while i <= j:
+        answer += 1
+        if people[j]+people[i] <= limit:
+            i += 1
+        j -= 1
     return answer
