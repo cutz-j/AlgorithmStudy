@@ -4,7 +4,7 @@ import sys
 
 sys.setrecursionlimit(999999)
 
-answer = sys.maxsize
+answer = 0
 
 
 def dfs(i, adj, cond, visited):
@@ -13,11 +13,11 @@ def dfs(i, adj, cond, visited):
     visited[i] = True
     for j, c in adj[i]:
         print("adj", j, c)
-        # if not visited[j]:
-        if cond[j] == c:
-            print(i, j, c)
-            answer += c
-            dfs(j, adj, cond, visited)
+        if not visited[j]:
+            if cond[j] == c:
+                print(i, j, c)
+                answer += c
+                dfs(j, adj, cond, visited)
 
 
 def solution(n: int, costs: list) -> int:
@@ -41,8 +41,7 @@ def solution(n: int, costs: list) -> int:
     for i in range(n):
         for j, c in adj[i]:
             if j == 0 and cond[j] == c:
-                answer = c
-                visited[i] = True
+                dfs(i, adj, cond, visited)
 
     for i in range(n):
         if not visited[i]:
