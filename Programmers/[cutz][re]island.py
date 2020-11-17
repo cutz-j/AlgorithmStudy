@@ -2,7 +2,6 @@ import heapq
 from collections import defaultdict
 import sys
 
-sys.setrecursionlimit(999999)
 
 def solution(n: int, costs: list) -> int:
     # kruskal algorithm
