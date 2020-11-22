@@ -1,3 +1,5 @@
+# https://programmers.co.kr/learn/courses/30/lessons/68646
+
 def solution(a: list) -> int:
     # array balloon different numbers
     # bomb, remaining only one

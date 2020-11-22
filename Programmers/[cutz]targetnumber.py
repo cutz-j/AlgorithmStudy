@@ -1,3 +1,5 @@
+# https://programmers.co.kr/learn/courses/30/lessons/43165
+
 answer = 0
 
 def dfs(v: int, idx: int, numbers: list, target: int) -> None:

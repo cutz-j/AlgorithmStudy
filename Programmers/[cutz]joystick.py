@@ -1,3 +1,5 @@
+# https://programmers.co.kr/learn/courses/30/lessons/42860
+
 def countA(name):
     idx = [0, 0]
     a_cnt, max_a = 0, 0

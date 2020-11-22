@@ -1,3 +1,5 @@
+# https://programmers.co.kr/learn/courses/30/lessons/12899
+
 def solution(n):
     answer = ''
     numbers = ['4', '1', '2']
