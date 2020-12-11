@@ -1,0 +1,19 @@
+from collections import deque
+
+
+def solution(skill, skill_trees):
+    answer = 0
+
+    skill_list = list(skill)
+
+    for skill in skill_trees:
+        queue = deque(skill_list)
+        print(queue)
+        for sk in skill:
+            if sk in skill_list:
+                if sk != queue.popleft():
+                    break
+        else:
+            answer += 1
+
+    return answer
