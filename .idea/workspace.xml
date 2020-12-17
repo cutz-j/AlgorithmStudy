@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7444049c-dd33-47e6-8820-4d33e050b735" name="Default Changelist" comment="" />
+    <list default="true" id="7444049c-dd33-47e6-8820-4d33e050b735" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,12 +25,14 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Code/NC/q2.py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Programmers" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="Python.q2">
     <configuration name="[cutz]rectangle" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -105,6 +109,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -127,36 +132,5 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="740" y="274" key="FileChooserDialogImpl" timestamp="1600698735377">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="740" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1600698735377" />
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom" timestamp="1600699141114">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600699141114" />
-    <state width="1877" height="281" key="GridCell.Tab.0.center" timestamp="1600699141114">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600699141114" />
-    <state width="1877" height="281" key="GridCell.Tab.0.left" timestamp="1600699141114">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600699141114" />
-    <state width="1877" height="281" key="GridCell.Tab.0.right" timestamp="1600699141114">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="281" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600699141114" />
-    <state x="937" y="83" key="SettingsEditor" timestamp="1600089496961">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="937" y="83" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1600089496961" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AlgorithmStudy$_cutz_rectangle.coverage" NAME="[cutz]rectangle Coverage Results" MODIFIED="1591150481013" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/lec7" />
-    <SUITE FILE_PATH="coverage/AlgorithmStudy$_cutz_resign.coverage" NAME="[cutz]resign Coverage Results" MODIFIED="1600698778107" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/samsung" />
-    <SUITE FILE_PATH="coverage/AlgorithmStudy$q2.coverage" NAME="q2 Coverage Results" MODIFIED="1600699141106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Code/NC" />
   </component>
 </project>
